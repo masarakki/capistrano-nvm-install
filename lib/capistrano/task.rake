@@ -14,7 +14,7 @@ namespace :nvm do
 
         nvm_path = fetch(:nvm_path)
         nvm_node_path = Array(fetch(:nvm_node_path))
-        execute "souruce #{nvm_path}/nvm.sh && nvm install #{nvm_node}" unless test(nvm_node_path.map {|p| "[ -d #{p} ]" }.join(" || "))
+        execute "source #{nvm_path}/nvm.sh && nvm install #{nvm_node}" unless test(nvm_node_path.map {|p| "[ -d #{p} ]" }.join(" || "))
       end
     end
   end
